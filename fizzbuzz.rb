@@ -3,21 +3,21 @@ def generateOutput(i)
 
   # Multiple-of tests
   if i % 3 == 0
-    output << "Fizz"
+    output << 'Fizz'
   end
   if i % 5 == 0
-    output << "Buzz"
+    output << 'Buzz'
   end
   if i % 7 == 0
-    output << "Bang"
+    output << 'Bang'
   end
   if i % 11 == 0
-    output = ["Bong"]
+    output = ['Bong']
   end
   if i % 13 == 0
-    index = output.index { |elem| elem[0] == "B" }
+    index = output.index { |elem| elem[0] == 'B' }
     index = index ? index : -1
-    output.insert(index, "Fezz")
+    output.insert(index, 'Fezz')
   end
   if i % 17 == 0
     output.reverse!
@@ -47,12 +47,25 @@ def fizzbuzz(max = 100)
 end
 
 # Tests:
-puts testOutput(1, "1")
-puts testOutput(3 * 7, "FizzBang")
-puts testOutput(3 * 11, "Bong")
-puts testOutput(5 * 13, "FezzBuzz")
-puts testOutput(3 * 5 * 13, "FizzFezzBuzz")
-puts testOutput(3 * 13, "FizzFezz")
-puts testOutput(11 * 13, "FezzBong")
-puts testOutput(3 * 5 * 17, "BuzzFizz")
-puts testOutput(11 * 13 * 17, "BongFezz")
+puts testOutput(1, '1')
+puts testOutput(3 * 7, 'FizzBang')
+puts testOutput(3 * 11, 'Bong')
+puts testOutput(5 * 13, 'FezzBuzz')
+puts testOutput(3 * 5 * 13, 'FizzFezzBuzz')
+puts testOutput(3 * 13, 'FizzFezz')
+puts testOutput(11 * 13, 'FezzBong')
+puts testOutput(3 * 5 * 17, 'BuzzFizz')
+puts testOutput(11 * 13 * 17, 'BongFezz')
+
+# Program begins here
+# -----------------------------------------------------------------------------
+# Loop until we get a positive number
+max = nil
+loop do
+  print 'FizzBuzz up to which number?: '
+  max = gets.chomp
+  break if max.match(/^\d+$/)
+  puts 'Please enter a positive number'
+end
+
+fizzbuzz(max.to_i)
