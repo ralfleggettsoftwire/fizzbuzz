@@ -1,4 +1,4 @@
-def generateOutput(i)
+def generate_output(i)
   output = Array.new
 
   # Multiple-of tests
@@ -32,14 +32,14 @@ def generateOutput(i)
   return output.join
 end
 
-def testOutput(input, expectedOutput)
-  output = generateOutput(input)
+def test_output(input, expectedOutput)
+  output = generate_output(input)
   puts "#{output == expectedOutput}; expected: #{expectedOutput}; got: #{output}"
 end
 
 def fizzbuzz(max = 100)
   (1..max).each { |i|
-    output = generateOutput(i)
+    output = generate_output(i)
 
     # Print output
     puts output
@@ -47,15 +47,15 @@ def fizzbuzz(max = 100)
 end
 
 # Tests:
-puts testOutput(1, '1')
-puts testOutput(3 * 7, 'FizzBang')
-puts testOutput(3 * 11, 'Bong')
-puts testOutput(5 * 13, 'FezzBuzz')
-puts testOutput(3 * 5 * 13, 'FizzFezzBuzz')
-puts testOutput(3 * 13, 'FizzFezz')
-puts testOutput(11 * 13, 'FezzBong')
-puts testOutput(3 * 5 * 17, 'BuzzFizz')
-puts testOutput(11 * 13 * 17, 'BongFezz')
+puts test_output(1, '1')
+puts test_output(3 * 7, 'FizzBang')
+puts test_output(3 * 11, 'Bong')
+puts test_output(5 * 13, 'FezzBuzz')
+puts test_output(3 * 5 * 13, 'FizzFezzBuzz')
+puts test_output(3 * 13, 'FizzFezz')
+puts test_output(11 * 13, 'FezzBong')
+puts test_output(3 * 5 * 17, 'BuzzFizz')
+puts test_output(11 * 13 * 17, 'BongFezz')
 
 # Program begins here
 # -----------------------------------------------------------------------------
